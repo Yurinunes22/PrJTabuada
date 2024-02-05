@@ -1,6 +1,6 @@
 const botaoDisparaTabuadaConsole = document.querySelector('.btn-console');
 
-
+const caixaEntradaTabuada = document.querySelector('#tabuada-number');
 
 
 botaoDisparaTabuadaConsole.addEventListener('click', () => {
@@ -11,6 +11,27 @@ botaoDisparaTabuadaConsole.addEventListener('click', () => {
 
 });
 
+//mostrar a tabuada quando o evento clicar no enter acontecer 
+ 
+// caixaEntradaTabuada.addEventListener('keyup', (e)=> {
+// if (e.key === 'Enter') {
+//     mostrarTabuadaNoConsole(caixaEntradaTabuada.value);
+//     mostrarTabuadanoDom(caixaEntradaTabuada.value);
+// }
+// })
+
+//caixaEntradaTabuada.addEventListener('keyup', this, verificarTecla);
+caixaEntradaTabuada.addEventListener('keyup', verificarTecla);
+//ou
+
+//associando uma variavel a um elemento, teremos disponiveis os dados do evento em si os dado do elemento
+
+function verificarTecla(e){
+     if (e.key === 'Enter') {
+        mostrarTabuadaNoConsole(this.value);
+        mostrarTabuadanoDom(this.value);
+     }
+}
 
 function mostrarTabuadaNoConsole(numero) {
 
